@@ -109,22 +109,32 @@ QWidget *Dash::status_bar() const
     widget->setObjectName("StatusBar");
     auto layout = new QHBoxLayout(widget);
     layout->setContentsMargins(0, 0, 0, 0);
-    layout->setSpacing(0);
+    layout->setSpacing(5);
 
     auto clock = new QLabel();
-    clock->setFont(this->arbiter.forge().font(10, true));
+    clock->setFont(this->arbiter.forge().font(15, true));
     clock->setAlignment(Qt::AlignCenter);
     layout->addWidget(clock);
+
+    /*
+     * new
+     */
+    //Climate climate = new Climate(*this->arbiter);
+    auto test = new QLabel();
+    test->setFont(this->arbiter.forge().font(15, true));
+    test->setAlignment(Qt::AlignLeft);
+    layout->addWidget(test);
+	test->setText("Hier Temparatur von Clima");
 
     connect(&this->arbiter.system().clock, &Clock::ticked, [clock](QTime time){
         clock->setText(QLocale().toString(time, QLocale::ShortFormat));
     });
-
+/*
     widget->setVisible(this->arbiter.layout().status_bar);
     connect(&this->arbiter, &Arbiter::status_bar_changed, [widget](bool enabled){
         widget->setVisible(enabled);
     });
-
+*/
     return widget;
 }
 

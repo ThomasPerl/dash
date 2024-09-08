@@ -52,6 +52,8 @@
         <file>stylesheets/light.qss</file>
         <file>stylesheets/dark.qss</file>
         <file>logo.png</file>
+        <file>Audi.png</file>
+        <file>audi.svg</file>
         <file>fonts/Titillium_Web/TitilliumWeb-Regular.ttf</file>
         <file>fonts/Montserrat/Montserrat-LightItalic.ttf</file>
         <file>fonts/Montserrat/Montserrat-Regular.ttf</file>

@@ -8,6 +8,7 @@ Arbiter::Arbiter(MainWindow *window)
     , window_(window)
     , session_(*this)
 {
+	this->settings().setValue("Layout/status_bar", true);
 }
 
 void Arbiter::set_mode(Session::Theme::Mode mode)
@@ -51,9 +52,9 @@ void Arbiter::set_scale(double scale)
 void Arbiter::set_status_bar(bool enabled)
 {
     this->layout().status_bar = enabled;
-    this->settings().setValue("Layout/status_bar", enabled);
+    this->settings().setValue("Layout/status_bar", true);
 
-    emit status_bar_changed(enabled);
+    emit status_bar_changed(true);
 }
 
 void Arbiter::set_control_bar(bool enabled)
@@ -166,7 +167,7 @@ void Arbiter::set_curr_fullscreen_toggler(int id)
 void Arbiter::set_fullscreen_on_start(bool enabled)
 {
     this->layout().fullscreen.on_start = enabled;
-    this->settings().setValue("Layout/Fullscreen/on_start", enabled);
+    this->settings().setValue("Layout/Fullscreen/on_start", false);
 
     emit fullscreen_on_start_changed(enabled);
 }

@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
 {
     QApplication dash(argc, argv);
 
-    dash.setOrganizationName("openDsh");
+    dash.setOrganizationName("PerlDash");
     dash.setApplicationName("dash");
     dash.installEventFilter(ActionEventFilter::get_instance());
 
